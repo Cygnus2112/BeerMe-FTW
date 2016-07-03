@@ -64,7 +64,7 @@ class Signup extends React.Component {
 
   render(){
     let signupBox = this.props.isFetching ? (             
-      <div className='register-spinner'>          
+      <div className='spinner'>          
         <h3>Creating your account ... </h3>
         <img src='../assets/darkspinner.gif'></img>
       </div> ) : (
@@ -110,6 +110,7 @@ class Signup extends React.Component {
       <div>
         <div><Header { ...this.props } /></div>
         <Jumbotron className='jumbo'>
+        <br />
           { signupBox }                                  
         </Jumbotron>
       </div>

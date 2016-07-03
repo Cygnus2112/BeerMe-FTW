@@ -1,24 +1,10 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-html, body {
-  height:100%;
-}
-
-button {
-  border-radius: 0;
-}
-
 @import url(https://fonts.googleapis.com/css?family=Assistant);
 
-$purewhite: #fff;
-$white: #F8FAF5;
+$white: #fff;
 $blue: #2521e8;
 $lightgray:#707070;
 
 $font-primary: 'Assistant';
-$font-accent: 'Assistant';
 
 @function calculateRem($size) {
   $remSize: $size / 16px;
@@ -31,22 +17,28 @@ $font-accent: 'Assistant';
 }
 
 body {
-  font-family: $font-accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: $font-primary;
   font-size: 16px;
 }
 
-.register-spinner {
+.spinner {
   h3 {
     color: $blue;
   }
   text-align: center;
 }
 
-.home {
-  .container {
-    margin: 0 auto;
-    padding-top:50px;
-  }
+.container {
+  margin: auto;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 a {
@@ -55,32 +47,28 @@ a {
 
 .jumbotron {
   position: relative;
-  left: 185px;
   padding-top: 10px;
-  background-color: $purewhite;
+  background-color: $white;
 }
 
 .jumbo {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  max-width: 70%;
 }
 
 .header {
   position: relative;
-  left: 185px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   text-align: center;
-  max-width: 70%;
+
 }
 
 .foot {
   text-align: center;
-  max-width: 70%;
   position: relative;
-  left: 185px;
+
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -96,9 +84,25 @@ a {
   align-items: center;
   justify-content: center;
 }
+
 .form-group-item {
   max-width: 50%;
+
 } 
+
+.beermodal .modal-content {
+  text-align: center;
+  width: 60%;
+
+  background-color: $white;
+  margin: 30px auto;
+  padding: 30px;
+  box-shadow: 0 4px 10px 4px;
+
+  .modalbody {
+    padding:0;
+  }
+}
 
 .modal-content {
   .modal-header {
@@ -107,82 +111,19 @@ a {
     .close {
       color: $blue;
       @include fontSize(60px);
-      margin-top:-30px;
+      margin-top:-20px;
       opacity:0.8;
     }
   }
 }
 
-.loginmodal .modal-content {
-
-  text-align: center;
-  width: 65%;
-
-  background-color: $purewhite;
-  margin: 30px auto;
-  padding: 30px;
-  box-shadow: 0 4px 10px 4px;
-
-  .modalbody {
-    padding:0;
-
-    .submit {
-      background-color: $blue;
-      color: $purewhite;
-      height: 65px;
-      @include fontSize(45px);
-      font-weight:bold;
-      font-family: $font-accent;
-      letter-spacing: 3px;
-      border-radius: 0;
-      cursor:pointer;
-      &:hover, &:focus {
-        background:$blue;
-      }
-    }
-
-    .name-input {
-      display: inline-block;
-      width: 48%;
-      margin-bottom: 0;
-    }
-
-    div.name-input:first-child {
-      margin-right: 4%;
-    }
-
-    div.name-input:last-child {
-      float:right;
-      margin-left:2%;
-    }
-
-    input {
-      display: block;
-      height: 45px;
-      @include fontSize(26px);
-      letter-spacing: 1px;
-      color: $lightgray;
-      background-color: inherit;
-      border: 0.5px solid $purewhite;
-      border-radius: 0;
-    }
-
-    .username {
-      margin-top:-5px;
-    }
-
-    .toggle {
-      color: $purewhite;
-      text-align: center;
-
-      a {
-        color: $blue;
-        cursor:pointer;
-      }
-
-    }
-  }
+.beerlabel {
+  position: relative;
+  left: 10px;
 }
 
-
+.beertitles {
+  padding-right: 48px;
+  padding-left: 48px;
+}
 

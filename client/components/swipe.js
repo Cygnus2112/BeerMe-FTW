@@ -60,16 +60,17 @@ class Swipe extends React.Component {
 
   render(){ 
     let beerView = this.props.isSearching && this.props.beerData.length === 0 ? (
-      <div className='register-spinner'>
+      <div className='spinner'>
         <h3>Loading beers...</h3>
         <img src='../assets/darkspinner.gif'></img>
       </div> ) : (
       <div>
         <div draggable="true" onDrag={ this.drag } id="beer">
-          <img src={this.props.beerToView.label} alt={this.props.beerToView.name} draggable='false'></img>
-          <br></br>
+          <img className="beerlabel" src={this.props.beerToView.label} alt={this.props.beerToView.name} draggable='false'></img>
+          <br />
+          <br />
           <h2>{this.props.beerToView.name}</h2></div>  
-          <br></br>
+          <br />
           <div>
           <span><img src='../assets/ic_thumb_up_green_3x.png' alt='Like' onClick={ this.likeBeer }></img></span>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -82,7 +83,7 @@ class Swipe extends React.Component {
       <Modal
         show={this.props.showSwipeModal}
         onHide={this.props.closeSwipe}              // DO API CALL TO UPDATE WISHLIST/DISLIKES HERE
-        className='loginmodal signin'>
+        className='beermodal'>
           <Modal.Header closeButton className='close-btn'>
           </Modal.Header>
           <Modal.Body className='modalbody'>
