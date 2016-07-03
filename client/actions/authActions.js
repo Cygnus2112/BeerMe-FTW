@@ -9,7 +9,8 @@ export const signup = (info) => {
   return dispatch => {
     dispatch(signupRequest(info));
 
-      return fetch('http://localhost:8080/signup', {
+      //return fetch('http://localhost:8080/signup', {
+      return fetch("http://beermeserver.yxuemvb8nv.us-west-2.elasticbeanstalk.com/signup", {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -73,7 +74,9 @@ export const login = (info) => {
   return dispatch => {
     dispatch(loginRequest(info));
 
-    return fetch('http://localhost:8080/login', {
+    //return fetch('http://localhost:8080/login', {
+    return fetch("http://beermeserver.yxuemvb8nv.us-west-2.elasticbeanstalk.com/login", {
+      
       method: 'POST',
       headers: {
         'Accept': 'application/json',

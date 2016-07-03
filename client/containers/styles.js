@@ -102,19 +102,15 @@ class Styles extends React.Component {
                     closeSwipe={this.closeSwipe} />
                 </a>
                 <br></br>
-                <a href="#" value="Ale" onClick={this.openSwipe}>Ale</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#" value="Lager" onClick={this.openSwipe}>Lager</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#" value="Pilsner" onClick={this.openSwipe}>Pilsner</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#" value="Stout" onClick={this.openSwipe}>Stout</a>
+                <div >
+                <a className="beertitles" href="#" value="Ale" onClick={this.openSwipe}>Ale</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a className="beertitles" href="#" value="Lager" onClick={this.openSwipe}>Lager</a>
+                &nbsp;
+                <a className="beertitles" href="#" value="Pilsner" onClick={this.openSwipe}>Pilsner</a>
+                &nbsp;
+                <a className="beertitles" href="#" value="Stout" onClick={this.openSwipe}>Stout</a>
+                </div>
         </Jumbotron>
       </div>
     )
@@ -124,9 +120,9 @@ class Styles extends React.Component {
     return (
       <div>
         <div><Header { ...this.props } /></div>
-        <div>
-          { this.displayStylesView() }
-        </div>
+          <div>
+            { this.displayStylesView() }
+          </div>
       </div>
    )
   }

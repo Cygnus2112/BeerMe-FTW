@@ -17,7 +17,7 @@ class Home extends React.Component {
 
   displayApp() {
     return (
-      <div>
+      <div className="container">
         <div>{this.props.children}</div>
         <div><Footer { ...this.props } /></div>
      </div>
