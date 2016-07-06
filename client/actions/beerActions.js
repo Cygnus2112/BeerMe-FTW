@@ -8,13 +8,12 @@ export const loadBeers = (userData) => {
   return dispatch => {
     dispatch(loadBeersRequest());
 
-   // return fetch('http://localhost:8080/fetchbeers?username='+userData.username+"&style="+userData.style, {
-    return fetch("http://beermeserver.yxuemvb8nv.us-west-2.elasticbeanstalk.com/fetchbeers?username="+userData.username+"&style="+userData.style, {
+    return fetch('http://localhost:8080/fetchbeers?username='+userData.username+"&style="+userData.style, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'x-access-token': localStorage.token
+        'x-access-token': localStorage.getItem('beerme-token')
       }
     })
     .then(response => {
