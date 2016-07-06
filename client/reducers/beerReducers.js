@@ -24,7 +24,12 @@ export default function beerReducer(state = initialState, action){
           isSearching: false,
           beerData: [...(new Set( [...state.beerData, ...action.beerData ]))] 
         })
-      }
+      }m
+    case ActionTypes.LOAD_BEERS_FAILURE:
+      return Object.assign({}, state, {
+        beerToView: {name: action.errorMessage},
+        beerData: [{name: action.errorMessage}]
+      })
     case ActionTypes.LOAD_FRONT_BEER:
       return Object.assign({}, state, {
         beerToView: state.beerData[0],

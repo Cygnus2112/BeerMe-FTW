@@ -1,6 +1,7 @@
 export const LOAD_BEERS_REQUEST = 'LOAD_BEERS_REQUEST';
 export const LOAD_BEERS_SUCCESS = 'LOAD_BEERS_SUCCESS';
 export const LOAD_FRONT_BEER = 'LOAD_FRONT_BEER';
+export const LOAD_BEERS_FAILURE = 'LOAD_BEERS_FAILURE';
 export const CLEAR_BEER_DATA = 'CLEAR_BEER_DATA';
 export const CLEAR_FRONT_BEER = 'CLEAR_FRONT_BEER';
 
@@ -20,6 +21,11 @@ export const loadBeers = (userData) => {
       return response.json();
     })
     .then(response => {
+      if(response.errorMessage) {
+        console.log('BreweryDB API Limit Reached. Sorry :-(')
+        dispatch(loadBeersFailure('BreweryDB API Limit Reached. Sorry :-('));
+        return;
+      }
       let beerArr = [];
       for(var key in response){
         beerArr.push({
@@ -45,6 +51,13 @@ const loadBeersSuccess = (beerData) => {
   return {
     type: LOAD_BEERS_SUCCESS,
     beerData
+  }
+}
+
+const loadBeersFailure = (errorMessage) => {
+  return {
+    type: LOAD_BEERS_FAILURE,
+    errorMessage
   }
 }
 
